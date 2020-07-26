@@ -16,7 +16,7 @@ class SimpleSearch():
             break
         else:
             print("step ", i)
-    # it takes around 24 steps to find "Key"
+    # it takes around 24 steps to find "Key" : O(n) time complexity
 
 class BinarySearch():
     print("<--Binary Serch Algorithm-->")
@@ -41,4 +41,4 @@ class BinarySearch():
         return None
     
     print(BinarySearch(list1,Key))
-    # it takes only 4 steps on given list: "list1"
+    # it takes only 4 steps on given list: "list1"  : O(log n) time complexity
