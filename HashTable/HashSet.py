@@ -1,3 +1,5 @@
+# create Hash Function without any Built - In Library
+
 class MyHashSet:
     def HashFunction(self, key):
         return key % 1000000
