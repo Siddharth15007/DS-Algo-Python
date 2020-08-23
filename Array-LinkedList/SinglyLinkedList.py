@@ -1,6 +1,5 @@
 # get concept and code from tutorialspoint for practice
 
-
 class Node:
     def __init__(self, data = None):
         self.data = data
