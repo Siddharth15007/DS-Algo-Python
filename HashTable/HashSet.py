@@ -1,53 +1,27 @@
-class HashFunction:
-    def __init__(self):
-        self.bucket = []
-        
-    def update(self, key):
-        found = False
-        for i, k in enumerate(self.bucket):
-            if key == k:
-                self.bucket[i] = key
-                found = True
-                break
-        if not found:
-            self.bucket.append(key)
-            
-    def get(self, key):
-        for k in enumerate(self.bucket):
-            return True
-        return False
-    
-    def remove(self, key):
-        for i, k in enumerate(self.bucket):
-            if key == k:
-                del self.bucket[i]
-
-
 class MyHashSet:
+    def HashFunction(self, key):
+        return key % 1000000
 
     def __init__(self):
-        self.key_space = 2096
-        self.hash_table = [HashFunction() for i in range(self.key_space)]
+        self.arr = [None for _ in range(1000000)]
         
+
     def add(self, key: int) -> None:
-        hash_key = key % self.key_space
-        print(self.hash_table[hash_key].update(key))
+        result = self.HashFunction(key)
+        self.arr[result] = key
+        print(self.arr[result])
+        
 
     def remove(self, key: int) -> None:
-        hash_key = key % self.key_space
-        print(self.hash_table[hash_key].remove(key))
-
+        result = self.HashFunction(key)
+        self.arr[result] = None
+        print(self.arr[result])
+        
     def contains(self, key: int) -> bool:
-        hash_key = key % self.key_space
-        print(self.hash_table[hash_key].get(key))
+        result = self.HashFunction(key)
+        print(self.arr[result] != None)
 
-
-# Your MyHashSet object will be instantiated and called as such:
-# OBJ = MYHASHSET()
-# obj.add(key)
-# obj.remove(key)
-# param_3 = obj.contains(key)
-
+ 
 print("Intialize Hash Function")
 hashSet = MyHashSet()
 print("Insert 1 and 2 in Hash Table")
